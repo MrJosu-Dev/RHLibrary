@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leer_Documento</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            gap: 20px; /* Separar los recuadros entre sí */
+            padding: 20px 0; /* Añadir espacio en la parte superior e inferior */
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Separar los recuadros entre sí */
+        }
+        .box {
+            width: 100%;
+            height: 60px; /* Tamaño vertical reducido */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px; /* Tamaño de texto aumentado */
+            font-weight: bold;
+            text-align: center;
+            border-radius: 8px; /* Bordes redondeados */
+        }
+        .box img {
+            max-height: 80%; /* Tamaño de imagen ajustado */
+            max-width: 180px; /* Tamaño de imagen ajustado */
+            margin: 0; /* Eliminar márgenes */
+        }
+        .text {
+            transition: transform 0.3s;
+        }
+        .text:hover {
+            transform: scale(1.2);
+        }
+        .box:nth-child(1) {
+            background-color: rgb(255, 203, 0);
+            height: 100px; /* Tamaño vertical ajustado para el primer div */
+        }
+        .box:nth-child(2),
+        .box:nth-child(4),
+        .box:nth-child(6) {
+            background-color: rgb(255, 218, 66);
+            border-radius: 8px; /* Bordes redondeados */
+        }
+        .box.wave {
+            background-color: rgb(255, 203, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-box {
+            position: relative;
+            width: 100%; /* Asegura que el div ocupe el ancho completo */
+            max-width: 220px; /* Ajusta el ancho máximo según tu diseño */
+            display: flex;
+            justify-content: center; /* Centra el contenedor de imagen */
+            align-items: center;
+            margin: 0 auto; /* Asegura que el contenedor esté centrado horizontalmente */
+        }
+        .image-box img {
+            width: 100%; /* Ajusta la imagen al tamaño del contenedor */
+            height: auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra en la imagen */
+            transition: all 0.3s; /* Transición para el oscurecimiento */
+        }
+        .image-box:hover img {
+            filter: grayscale(100%) brightness(0.6); /* Aplicar filtro de escala de grises y ajustar brillo */
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            width: 100%; /* Ocupa el ancho completo de la imagen */
+            text-align: center; /* Centra el texto dentro del recuadro */
+            display: none; /* Oculto por defecto */
+            font-size: 18px; /* Tamaño del texto */
+            box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+        }
+        .image-box:hover .overlay {
+            display: block; /* Mostrar overlay al pasar el puntero */
+        }
+        .pdf-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(231, 230, 230);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .pdf-container embed {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .download-button {
+            background-color: rgb(255, 218, 66);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color:  rgb(255, 203, 0);
+        }
+
+        @media (max-width: 768px) {
+            .pdf-container {
+                width: 100%;
+                padding: 10px;
+            }
+            .pdf-container embed {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pdf-container embed {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="Imagenes/LogoEditionVincent.jpg" alt="Logo">
+        </div>
+        <div class="box"><span class="text">Vincent Van Gogh</span></div>
+        <div class="pdf-container">
+            <embed src="Documentos/Lector/Biografia Vincent Van Gogh.pdf" type="application/pdf">
+            <a href="Documentos/Descarga/Biografia Vincent Van Gogh.docx" download>
+                <button class="download-button"><b>Download</b></button>
+            </a>
+        </div>
+        <div class="box wave">
+            <span class="text">R</span>
+            <span class="text">H</span>
+            <span class="text"> </span>
+            <span class="text">L</span>
+            <span class="text">i</span>
+            <span class="text">b</span>
+            <span class="text">r</span>
+            <span class="text">a</span>
+            <span class="text">r</span>
+            <span class="text">y</span>
+            <span class="text"> </span>
+            <span class="text">2</span>
+            <span class="text">0</span>
+            <span class="text">2</span>
+            <span class="text">4</span>
+        </div>
+    </div>
+</body>
+</html>
